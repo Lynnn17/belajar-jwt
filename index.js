@@ -4,6 +4,9 @@ const morgan = require("morgan"); //loging
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const users = require("./routes/index");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const app = express();
 
@@ -27,9 +30,10 @@ app.use("/users", users);
 
 app.get("/", (req, res) => {
   console.log("/");
+  console.log("Env", process.env.ACCESS_TOKEN_SECRET);
   res.send("ok");
 });
 
 app.listen(port, () => {
-  console.log(`Server Run Di: http://localhost/${port}`);
+  console.log(`Server Run Di: http://localhost:${port}`);
 });
