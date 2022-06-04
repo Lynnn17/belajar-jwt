@@ -19,7 +19,7 @@ app.use(
   })
 );
 
-app.use(cors());
+app.use(cors({ credentials: true, origin: "http://localhost:8080" }));
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(
@@ -31,7 +31,7 @@ app.use(
 app.use("/users", users);
 
 app.get("/", (req, res) => {
-  console.log("Cookies: ", req.cookies);
+  console.log("/");
 });
 
 app.listen(port, () => {
