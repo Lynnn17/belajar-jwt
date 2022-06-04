@@ -42,7 +42,7 @@ exports.login = async (req, res) => {
   const { email, password } = req.body;
   const allData = { email, password };
 
-  Users.userLogin(allData, (err, result) => {
+  Users.userLogin(allData, res, (err, result) => {
     if (err) {
       res.send(err);
     }

@@ -1,8 +1,9 @@
 const express = require("express");
-const port = 3001;
+const port = 8080;
 const morgan = require("morgan"); //loging
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
 const users = require("./routes/index");
 const dotenv = require("dotenv");
 
@@ -19,6 +20,7 @@ app.use(
 );
 
 app.use(cors());
+app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(
   express.urlencoded({
@@ -29,9 +31,7 @@ app.use(
 app.use("/users", users);
 
 app.get("/", (req, res) => {
-  console.log("/");
-  console.log("Env", process.env.ACCESS_TOKEN_SECRET);
-  res.send("ok");
+  console.log("Cookies: ", req.cookies);
 });
 
 app.listen(port, () => {
