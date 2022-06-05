@@ -6,3 +6,8 @@ Content-Type: application/json
     "email" : "woo@gmail.com",
     "password" :"123"
 }
+
+###
+
+GET http://localhost:8080/users/check
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsIm5hbWUiOiJ0ZXMiLCJlbWFpbCI6Indvb0BnbWFpbC5jb20iLCJpYXQiOjE2NTQ0MDU5NzYsImV4cCI6MTY1NDQwNTk5Nn0.X80g6kTMKh1q8Nsm5-Czdd8skdJshzo_QJghiAuDH_8
